@@ -1,0 +1,67 @@
+/*if I want my layout to fit a mobile device we have to set the width to where it will 
+change to fit a mobile device. So if we shrink our screen to below 468px it'll change 
+the containers to fit the screen. We will also add the containers between the {}*/
+@media (min-width: 468px){
+/* main container for the page */
+.container-1 {
+    /*this put the flex items side by side.*/
+    display: flex;
+    /*aligns the flex item boxes to the top, center, or bottom relative to the other items.
+    align-items: flex-start, center, flex-end;
+    */
+    
+    /*layout is now in rows and columns.
+    flex-direction: column, row;
+    */
+}
+
+.container-2 {
+    display: flex;
+    /*takes the contents of the container and adjusts it.
+    justify-content: flex-start (default), center, flex-end, space-around;
+    */
+    /*this will put space between the flex item boxes.*/
+    justify-content: space-between;    
+}
+
+.container-3 {
+    display: flex;
+    /*adding flex-wrap: wrap will allow the flex item box to wrap to the next 
+    line when we shrink the screen.*/
+    flex-wrap: wrap;
+}
+
+.container-1 div, .container-2 div, .container-3 div {
+   border: 1px #ccc solid;
+   padding: 10px; 
+}
+
+.box-1 {
+    /*changes the width of the flex item*/
+    flex: 2; 
+    /*changes the order of the flex items*/
+    order: 2;
+}
+
+.box-2 {
+    flex: 1;
+    order: 1;
+}
+
+.box-3 {
+    flex: 1; 
+    order: 3; 
+}
+
+.container-2-box {
+    /*changes the width of the flex item box to the page*/
+    flex-basis: 30%;
+}
+
+.container-3-box {
+    flex-basis: 15%;
+}
+
+.container-2-box:nth-child(1) {background-color: red;}
+.container-2-box:nth-child(2) {background-color: yellow;}
+.container-2-box:nth-child(3) {background-color: green;}
